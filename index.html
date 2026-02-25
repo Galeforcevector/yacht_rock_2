@@ -46,13 +46,14 @@
             top: 0;
             left: 0;
             width: 100vw;
-            height: 100dvh; /* Use dynamic viewport height for mobile browsers */
+            height: 100dvh; 
             z-index: -10;
-            background-image: url('istockphoto-486325686-612x612.jpg');
+            /* Replaced with a reliable high-res nautical background */
+            background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop');
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            filter: brightness(0.7) contrast(1.1);
+            filter: brightness(0.6) contrast(1.1);
         }
 
         .page-overlay {
@@ -87,7 +88,7 @@
         /* --- BENTO GRID LAYOUT --- */
         .app-container {
             width: 100%;
-            max-width: 480px; /* Slightly narrower for better focus on mobile */
+            max-width: 480px; 
             padding: 20px 15px 60px;
             display: flex;
             flex-direction: column;
@@ -137,7 +138,7 @@
             box-shadow: none !important; 
         }
         
-        .hero-hat {
+        .hero-hat-svg {
             width: 90px;
             height: auto;
             margin: 0 auto 8px;
@@ -233,7 +234,8 @@
             grid-column: span 2;
             text-align: center;
             padding: 30px 20px;
-            background: #001b3a url('HOB Houston 348e13c7-1b2b-49fd-83bd-ac5671e96595.jpeg') center/cover no-repeat;
+            /* Replaced with a generic but high-quality concert/lounge background */
+            background: #001b3a url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
             position: relative;
             min-height: 180px; 
             border: 1px solid var(--gold);
@@ -257,7 +259,7 @@
             text-align: center; 
             background: rgba(197, 160, 89, 0.15); 
         }
-        .rsvp-hat { width: 45px; margin-bottom: 8px; opacity: 0.9; }
+        .rsvp-hat-svg { width: 45px; height: auto; margin-bottom: 8px; opacity: 0.9; }
 
         .footer-quote { 
             text-align: center; 
@@ -293,7 +295,14 @@
             
             <!-- Hero Tile -->
             <div class="bento-item tile-hero">
-                <img src="61FM3OKfViL._AC_SX569_.jpg" class="hero-hat" alt="Captain Hat">
+                <!-- Inline SVG Captain Hat for guaranteed rendering -->
+                <svg class="hero-hat-svg" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 40 Q50 30 90 40 L90 50 Q50 60 10 50 Z" fill="white" />
+                    <path d="M15 40 Q50 10 85 40" fill="white" stroke="#002349" stroke-width="1.5" />
+                    <path d="M5 45 Q50 55 95 45 L95 48 Q50 58 5 48 Z" fill="#222" />
+                    <circle cx="50" cy="35" r="7" fill="#C5A059" />
+                    <path d="M48 35 L50 31 L52 35 L50 39 Z" fill="#002349" />
+                </svg>
                 <h2 style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.6rem; margin: 0; color: var(--white); font-weight: 700; opacity: 0.9;">Prepare for Smooth Sailing</h2>
                 <h1>Terry's Birthday <span>Celebration</span></h1>
                 <span style="font-size: 0.75rem; letter-spacing: 2px; color: var(--gold); font-weight: 700;">Houston · Embarking Tomorrow</span>
@@ -301,7 +310,8 @@
 
             <!-- Julie McCoy Concierge -->
             <div class="bento-item tile-concierge">
-                <img src="Julie_McCoy.webp" alt="Julie McCoy" class="concierge-img">
+                <!-- Using a stable public image for Julie McCoy -->
+                <img src="https://upload.wikimedia.org/wikipedia/en/2/23/Julie_McCoy_Love_Boat.jpg" alt="Julie McCoy" class="concierge-img" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300'">
                 <div class="concierge-content">
                     <h3>"Welcome Aboard!"</h3>
                     <p>Julie McCoy · Concierge</p>
@@ -319,7 +329,8 @@
                     <p>7:00 PM</p>
                     <div class="pass-barcode">VINTAGE2026</div>
                     <div class="tm-box">
-                        <img src="blue-logo@3x.png" alt="Ticketmaster" class="tm-logo">
+                        <!-- Stable Ticketmaster Logo -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Ticketmaster_logo.svg/512px-Ticketmaster_logo.svg.png" alt="Ticketmaster" class="tm-logo">
                     </div>
                 </div>
             </a>
@@ -351,7 +362,12 @@
 
             <!-- RSVP -->
             <a href="sms:+12817333775?body=I'm%20joining%20the%20voyage!%20⚓" class="bento-item tile-rsvp">
-                <img src="61FM3OKfViL._AC_SX569_.jpg" class="rsvp-hat" alt="Small Hat">
+                <svg class="rsvp-hat-svg" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 40 Q50 30 90 40 L90 50 Q50 60 10 50 Z" fill="white" />
+                    <path d="M15 40 Q50 10 85 40" fill="white" stroke="#002349" stroke-width="1.5" />
+                    <path d="M5 45 Q50 55 95 45 L95 48 Q50 58 5 48 Z" fill="#222" />
+                    <circle cx="50" cy="35" r="7" fill="#C5A059" />
+                </svg>
                 <h2 style="color: var(--gold); margin: 0 0 8px 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">Secure Your Passage</h2>
                 <p style="font-weight: 700; letter-spacing: 2px; margin: 0; font-size: 0.9rem;">TEXT: 1-281-733-3775 ⚓</p>
                 <p style="font-size: 0.5rem; opacity: 0.8; margin-top: 6px; font-weight: 400; color: #fff;">Confirm by sunset for the Captain's Table.</p>
