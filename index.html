@@ -13,6 +13,7 @@
             --white: #F8F9FA;
             --sky: #89CFF0;
             --tm-blue: #026cdf; 
+            --bright-yellow: #FFFF00;
             --card-bg: rgba(0, 35, 73, 0.75); 
             --card-border: rgba(255, 255, 255, 0.2);
         }
@@ -242,7 +243,7 @@
             margin-top: 6px;
             text-decoration: none;
             background: #232f3e;
-            color: white;
+            color: var(--bright-yellow); /* Changed to bright yellow */
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.65rem;
@@ -378,8 +379,8 @@
                     <p>7:00 PM</p>
                     <div class="pass-barcode">VINTAGE2026</div>
                     <div class="tm-box">
-                        <!-- Added ticket purchase text -->
-                        <p style="font-size: 0.65rem; margin-bottom: 8px; text-transform: uppercase; font-weight: 800; color: var(--gold); letter-spacing: 1px;">Purchase your tickets.<br>Click this link</p>
+                        <!-- Added ticket purchase text - color set to bright yellow -->
+                        <p style="font-size: 0.65rem; margin-bottom: 8px; text-transform: uppercase; font-weight: 800; color: var(--bright-yellow); letter-spacing: 1px;">Purchase your tickets.<br>Click this link</p>
                         <!-- Restored original Ticketmaster logo reference -->
                         <img src="blue-logo@3x.png" alt="Ticketmaster" class="tm-logo">
                     </div>
@@ -408,7 +409,7 @@
                 <div style="flex: 1;"></div> 
                 <label>Port of Call</label>
                 <p>House of Blues · Houston</p>
-                <p style="font-size: 0.8rem; font-weight: 800; color: var(--white); margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,1);">Tap for Map</p>
+                <p style="font-size: 0.8rem; font-weight: 800; color: var(--bright-yellow); margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,1);">Tap for Map</p>
                 <span style="font-size: 0.65rem; color: var(--gold); text-transform: uppercase; margin-top: 6px; font-weight: 700;">Foundation Room Entry</span>
             </a>
 
@@ -416,7 +417,7 @@
             <a href="sms:+12817333775?body=I'm%20joining%20the%20voyage!%20⚓" class="bento-item tile-rsvp">
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="rsvp-hat" alt="Small Hat">
                 <h2 style="color: var(--gold); margin: 0 0 10px 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">Secure Your Passage</h2>
-                <div style="background: var(--gold); color: var(--navy); padding: 10px 20px; border-radius: 50px; font-weight: 700; letter-spacing: 1px; margin: 8px 0; display: inline-block; font-size: 0.85rem;">
+                <div style="background: var(--gold); color: var(--bright-yellow); padding: 10px 20px; border-radius: 50px; font-weight: 700; letter-spacing: 1px; margin: 8px 0; display: inline-block; font-size: 0.85rem;">
                     TAP TO TEXT RSVP ⚓
                 </div>
                 <p style="font-weight: 700; letter-spacing: 1px; margin: 5px 0 0; font-size: 1rem; opacity: 0.9;">1-281-733-3775</p>
