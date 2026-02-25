@@ -130,13 +130,16 @@
             z-index: 10;
         }
 
-        /* Hero Tile - Revised to remove internal image and focus on page background */
+        /* Hero Tile - Background set to transparent to remove the blue/gradient overlay */
         .tile-hero {
             grid-column: span 2;
             text-align: center;
             padding: 30px 25px 40px;
-            background: linear-gradient(135deg, rgba(197, 160, 89, 0.3), rgba(0, 35, 73, 0.7));
+            background: transparent; /* Removed blue background */
             border: 2px solid var(--gold);
+            backdrop-filter: none; /* Optional: remove blur if you want it completely clear */
+            -webkit-backdrop-filter: none;
+            box-shadow: none; /* Optional: remove shadow to make it feel integrated into the background */
             position: relative;
         }
         
@@ -312,7 +315,7 @@
     <div class="app-container">
         <div class="bento-grid">
             
-            <!-- Hero (Row 1) - First Bento Box - Image removed from box background -->
+            <!-- Hero (Row 1) - First Bento Box - Background set to transparent -->
             <div class="bento-item tile-hero">
                 <!-- Captain Hat Image -->
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="hero-hat" alt="Captain Hat">
