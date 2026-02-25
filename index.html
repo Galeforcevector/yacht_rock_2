@@ -27,7 +27,7 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            background-color: transparent; /* Changed from black to transparent */
+            background-color: transparent !important; 
         }
 
         body {
@@ -193,19 +193,20 @@
         /* Ticketmaster Logo Box Styling */
         .tm-box {
             background-color: #fff;
-            padding: 8px 12px;
-            border-radius: 8px;
-            margin: 10px auto 0;
+            padding: 10px 14px;
+            border-radius: 6px;
+            margin: 12px auto 0;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border: 1px solid #eee;
-            width: fit-content;
+            border: 1px solid #e5e5e5;
+            width: 85%; /* Slightly wider for full logo presence */
         }
 
         .tm-logo {
-            width: 100px;
+            width: 100%;
+            max-width: 95px;
             height: auto;
             display: block;
             object-fit: contain;
@@ -338,8 +339,8 @@
                     <p>7:00 PM</p>
                     <div class="pass-barcode">VINTAGE2026</div>
                     <div class="tm-box">
-                        <!-- Official high-res Ticketmaster logo -->
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Ticketmaster_logo.svg/1024px-Ticketmaster_logo.svg.png" alt="Ticketmaster" class="tm-logo">
+                        <!-- Official high-res Ticketmaster logo SVG -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Ticketmaster_logo.svg" alt="Ticketmaster" class="tm-logo">
                     </div>
                 </div>
             </a>
