@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sailing Into Brighter Horizons</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Libre+Barcode+128&display=swap" rel="stylesheet">
+        <style>
+            :root {
+                --navy: #002349;
+                --gold: #C5A059;
+                --white: #F8F9FA;
+                --sky: #89CFF0;
+                --card-bg: rgba(0, 35, 73, 0.55); 
+                --card-border: rgba(255, 255, 255, 0.2);
+            }
+    
+            * {
+                box-sizing: border-box;
+                -webkit-tap-highlight-color: transparent;
+            }
+    
+            /* --- FIXED BACKGROUND --- */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+    
+            body {
+                /* Immersive deck background */
+                background: url('https://media.istockphoto.com/id/486325686/photo/sailing-at-sunset.jpg?s=612x612&w=0&k=20&c=L_v4BvA_1W7Zq9p5S-R1O_v3S-r1o_v3S-r1o=') no-repeat center center fixed;
+                background-size: cover;
+                font-family: 'Montserrat', sans-serif;
+                color: var(--white);
+                display: flex;
+                justify-content: center;
+                overflow-x: hidden;
+            }
+    
+            body::before {
+                content: '';
+                position: fixed;
+                top: 0; left: 0; right: 0; bottom: 0;
+                background: linear-gradient(180deg, rgba(0, 35, 73, 0.2) 0%, rgba(0, 35, 73, 0.5) 100%);
+                z-index: -1;
+            }
+    
+            /* --- ANIMATED ELEMENTS --- */
+            .cloud {
+                position: fixed;
+                background: white;
+                opacity: 0.1;
+                border-radius: 50px;
+                filter: blur(30px);
+                z-index: -1;
+                animation: drift linear infinite;
+            }
+            .cloud-1 { width: 300px; height: 100px; top: 10%; left: -300px; animation-duration: 45s; }
+            .cloud-2 { width: 200px; height: 80px; top: 25%; left: -250px; animation-duration: 60s; animation-delay: -10s; }
+    
+            @keyframes drift {
+                from { transform: translateX(-20vw); }
+                to { transform: translateX(120vw); }
+            }
+    
+            /* --- BENTO GRID LAYOUT --- */
+            .app-container {
+                width: 100%;
+                max-width: 500px;
+                padding: 30px 20px 100px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                z-index: 1;
+            }
+    
+            .bento-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+    
+            .bento-item {
+                background: var(--card-bg);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border: 1px solid var(--card-border);
+                border-radius: 32px;
+                padding: 20px;
+                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                cursor: pointer;
+                text-decoration: none;
+                color: inherit;
+                position: relative;
+                overflow: hidden;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            }
+    
+            .bento-item:hover {
+                transform: translateY(-8px) scale(1.02);
+                background: rgba(0, 35, 73, 0.75);
+                border-color: var(--gold);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+                z-index: 10;
+            }
+    
+            /* Hero Styling */
+            .tile-hero {
+                grid-column: span 2;
+                text-align: center;
+                padding: 45px 25px;
+                background: linear-gradient(135deg, rgba(197, 160, 89, 0.35), rgba(0, 35, 73, 0.7));
+                border: 2px solid var(--gold);
+            }
+            .tile-hero h2 { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; margin: 0; color: var(--sky); font-weight: 700; }
+            .tile-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin: 10px 0; font-style: italic; line-height: 1.1; }
+            .tile-hero h1 span { color: var(--gold); display: block; font-size: 1rem; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-style: normal; letter-spacing: 6px; margin-top: 8px; }
+    
+            /* Timer Styling */
+            .tile-timer { 
+                grid-column: span 2; 
+                flex-direction: row; 
+                justify-content: space-around; 
+                background: var(--white); 
+                color: var(--navy); 
+                padding: 22px; 
+                border: 3px solid var(--navy); 
+            }
+            .timer-unit { display: flex; flex-direction: column; align-items: center; }
+            .timer-unit span:first-child { font-weight: 700; font-size: 1.7rem; }
+            .timer-unit span:last-child { font-size: 0.6rem; text-transform: uppercase; opacity: 0.8; font-weight: 700; }
+    
+            /* Video Styling */
+            .tile-video { 
+                grid-column: span 2; 
+                padding: 0; 
+                border: 1px solid var(--gold);
+                background-color: #000;
+            }
+            .video-container { position: relative; padding-bottom: 56.25%; height: 0; }
+            .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+            .play-overlay { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.8); padding: 8px 15px; border-radius: 25px; font-size: 0.6rem; color: var(--gold); font-weight: 700; z-index: 2; border: 1px solid var(--gold); pointer-events: none; }
+    
+            /* Julie McCoy Concierge - Second Interval Style */
+            .tile-concierge {
+                grid-column: span 1; 
+                padding: 0;
+                overflow: hidden;
+                background: #fff;
+                position: relative;
+                min-height: 200px;
+                border: 1px solid var(--gold);
+            }
+            .concierge-img {
+                width: 100%;
+                height: 65%;
+                object-fit: cover;
+                background: url('https://files.oaiusercontent.com/file-YpXJ88uFvVj2hA0N7f1tK2?se=2025-02-25T18%3A13%3A17Z&sp=r&sv=24.12&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3DJulie_McCoy.webp&sig=6Y7p1Gq5I0m7n7v9S6S7G8H9I0J1K2L3M4N5O6P7Q8%3D') center/cover;
+            }
+            .concierge-content {
+                height: 35%;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background: var(--white);
+                color: var(--navy);
+                text-align: center;
+            }
+            .concierge-content h3 { margin: 0; font-size: 0.85rem; font-family: 'Playfair Display', serif; font-style: italic; }
+            .concierge-content p { margin: 2px 0 0; font-size: 0.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--gold); }
+    
+            /* Boarding Pass Styles */
+            .tile-boarding {
+                grid-column: span 1;
+                background: #fffdf2;
+                color: var(--navy);
+                border: none;
+                padding: 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            .pass-header { background: var(--navy); color: var(--white); padding: 6px; font-size: 0.5rem; text-transform: uppercase; letter-spacing: 2px; text-align: center; }
+            .pass-body { padding: 15px; text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%; }
+            .pass-body label { display: block; font-size: 0.45rem; text-transform: uppercase; color: #888; margin-bottom: 2px; }
+            .pass-body p { font-size: 0.9rem; margin: 0; font-weight: 700; }
+            .pass-barcode { font-family: 'Libre Barcode 128', cursive; font-size: 1.8rem; margin: 8px 0; opacity: 0.8; }
+            .pass-perforation { border-top: 1px dashed #ccc; height: 1px; width: 100%; margin: 10px 0; position: relative; }
+    
+            .tile-info { text-align: center; padding: 25px 20px; }
+            .tile-info label { color: var(--navy); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; display: block; font-weight: 700; opacity: 0.7; }
+            .tile-info p { margin: 0; font-size: 1.1rem; font-weight: 700; line-height: 1.3; }
+    
+            .tile-rsvp { grid-column: span 2; padding: 35px 20px; border: 2px dashed var(--gold); text-align: center; background: rgba(197, 160, 89, 0.2); }
+    
+            .footer-quote { text-align: center; font-size: 0.75rem; opacity: 0.9; font-style: italic; margin-top: 30px; padding: 0 30px; line-height: 1.5; }
+        </style>
+    </head>
+    <body>
+    
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+    
+        <div class="app-container">
+            <div class="bento-grid">
+                
+                <!-- Hero Tile (Row 1) -->
+                <div class="bento-item tile-hero">
+                    <h2>Let's Get Sailing</h2>
+                    <h1>Terry's Birthday <span>Celebration</span></h1>
+                    <span style="font-size: 0.85rem; letter-spacing: 2px; color: var(--gold); font-weight: 700;">Houston · Tomorrow Night</span>
+                </div>
+    
+                <!-- Boarding Pass & Julie McCoy (Row 2) -->
+                <div class="bento-item tile-boarding">
+                    <div class="pass-header">Boarding Pass</div>
+                    <div class="pass-body">
+                        <label>Embarkation</label>
+                        <p>FEB 26TH</p>
+                        <div class="pass-perforation"></div>
+                        <label>Time</label>
+                        <p>7:00 PM</p>
+                        <div class="pass-barcode">VINTAGE2026</div>
+                    </div>
+                </div>
+    
+                <div class="bento-item tile-concierge">
+                    <div class="concierge-img"></div>
+                    <div class="concierge-content">
+                        <h3>"Welcome Aboard!"</h3>
+                        <p>Julie McCoy · Concierge</p>
+                    </div>
+                </div>
+    
+                <!-- Countdown Timer (Row 3) -->
+                <div class="bento-item tile-timer" id="timer">
+                    <div class="timer-unit"><span id="days">00</span><span>Days</span></div>
+                    <div class="timer-unit"><span id="hours">00</span><span>Hrs</span></div>
+                    <div class="timer-unit"><span id="minutes">00</span><span>Min</span></div>
+                    <div class="timer-unit"><span id="seconds">00</span><span>Sec</span></div>
+                </div>
+    
+                <!-- Video Preview Tile (Row 4) -->
+                <div class="bento-item tile-video">
+                    <div class="play-overlay">⚓ SHOW PREVIEW</div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/Lay0iEixeac?autoplay=0&mute=0&controls=1" allowfullscreen></iframe>
+                    </div>
+                </div>
+    
+                <!-- Navigation Port Link (Row 5) -->
+                <a href="https://www.google.com/maps/search/?api=1&query=House+of+Blues+Houston" target="_blank" class="bento-item tile-info" style="background: var(--gold); color: var(--navy); grid-column: span 2;">
+                    <label>Nav Port</label>
+                    <p>House of Blues · Houston, TX</p>
+                    <div style="font-size: 0.5rem; margin-top: 8px; font-weight: 700; text-transform: uppercase;">Tap for Directions 📍</div>
+                </a>
+    
+                <!-- Full Width RSVP (Row 6) -->
+                <a href="sms:+15550000000?body=I'm%20joining%20the%20voyage!%20⚓" class="bento-item tile-rsvp">
+                    <h2 style="color: var(--gold); margin: 0 0 10px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px;">Secure Your Passage</h2>
+                    <p style="font-weight: 700; letter-spacing: 3px; margin: 0;">CLICK TO RSVP VIA TEXT ⚓</p>
+                </a>
+    
+            </div>
+    
+            <p class="footer-quote">
+                "Brandy, you're a fine girl, what a good birthday you would be."<br>
+                <span style="font-weight: 700; color: var(--gold); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px;">Dress: Yacht Chic / Captain's Hats Required</span>
+            </p>
+        </div>
+    
+        <script>
+            const eventDate = new Date("February 26, 2026 19:00:00").getTime();
+    
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const difference = eventDate - now;
+    
+                if (difference <= 0) {
+                    document.getElementById('timer').innerHTML = "<div style='font-weight:700; width: 100%; text-align: center; color: var(--navy);'>ANCHORS AWEIGH! ⚓</div>";
+                    return;
+                }
+    
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    
+                document.getElementById('days').innerText = days.toString().padStart(2, '0');
+                document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            }
+    
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        </script>
+    </body>
+    </html>
