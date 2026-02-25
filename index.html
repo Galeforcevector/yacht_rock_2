@@ -243,7 +243,7 @@
             margin-top: 6px;
             text-decoration: none;
             background: #232f3e;
-            color: var(--bright-yellow); /* Changed to bright yellow */
+            color: var(--bright-yellow); 
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.65rem;
@@ -271,10 +271,26 @@
             padding: 0; 
             border: 1px solid var(--gold);
             aspect-ratio: 16 / 9;
+            position: relative;
         }
         .video-container { position: relative; width: 100%; height: 100%; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .play-overlay { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.8); padding: 8px 14px; border-radius: 20px; font-size: 0.65rem; color: var(--gold); font-weight: 700; z-index: 2; border: 1px solid var(--gold); }
+        
+        /* Updated text as requested */
+        .play-overlay { 
+            position: absolute; 
+            top: 12px; 
+            right: 12px; 
+            background: rgba(0,0,0,0.85); 
+            padding: 8px 14px; 
+            border-radius: 20px; 
+            font-size: 0.65rem; 
+            color: var(--bright-yellow); /* Yellow color consistent with other action items */
+            font-weight: 800; 
+            z-index: 2; 
+            border: 1px solid var(--gold);
+            text-transform: uppercase;
+        }
         .band-label { position: absolute; bottom: 12px; left: 12px; background: rgba(0, 35, 73, 0.9); color: var(--white); padding: 6px 12px; border-radius: 12px; font-size: 0.65rem; font-weight: 700; z-index: 2; border: 1px solid var(--gold); }
 
         /* Navigation Port */
@@ -397,10 +413,10 @@
 
             <!-- Video -->
             <div class="bento-item tile-video">
-                <div class="play-overlay">⚓ SHOW PREVIEW</div>
+                <div class="play-overlay">⚓ Click to show preview</div>
                 <div class="band-label">Yacht Rock Revue LIVE</div>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Lay0iEixeac?autoplay=1&mute=1&loop=1&playlist=Lay0iEixeac" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Lay0iEixeac?autoplay=1&mute=0&loop=1&playlist=Lay0iEixeac" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
 
@@ -416,7 +432,7 @@
             <!-- RSVP -->
             <a href="sms:+12817333775?body=I'm%20joining%20the%20voyage!%20⚓" class="bento-item tile-rsvp">
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="rsvp-hat" alt="Small Hat">
-                <h2 style="color: var(--gold); margin: 0 0 10px 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">Secure Your Passage</h2>
+                <h2 style="color: var(--gold); margin: 0 0 8px 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">Secure Your Passage</h2>
                 <div style="background: var(--navy); color: var(--bright-yellow); padding: 10px 20px; border-radius: 50px; font-weight: 700; letter-spacing: 1px; margin: 8px 0; display: inline-block; font-size: 0.85rem; border: 1px solid var(--gold);">
                     TAP TO TEXT RSVP ⚓
                 </div>
