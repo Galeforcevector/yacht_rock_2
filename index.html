@@ -28,7 +28,7 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            background-color: #000; /* Set to black or transparent so blue doesn't show through */
+            background-color: #000; /* Dark base so no blue shines through */
         }
 
         body {
@@ -54,10 +54,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.7) contrast(1.1); /* Slightly adjusted brightness */
+            filter: brightness(0.6) contrast(1.1); /* Slightly darkened for better text legibility */
         }
-
-        /* Removed .bg-overlay entirely to get rid of the blue tint/wash */
 
         /* --- ANIMATED CLOUDS --- */
         .cloud {
@@ -121,16 +119,16 @@
             z-index: 10;
         }
 
-        /* Hero Tile - Fully transparent with no backdrop effects */
+        /* Hero Tile - Forced Transparency and Border Removal */
         .tile-hero {
             grid-column: span 2;
             text-align: center;
-            padding: 30px 25px 40px;
-            background: transparent; 
-            border: 2px solid var(--gold);
-            backdrop-filter: none; 
-            -webkit-backdrop-filter: none;
-            box-shadow: none; 
+            padding: 20px 25px 30px;
+            background: transparent !important; /* Force transparent */
+            border: none !important; /* Remove border to clear up the space */
+            backdrop-filter: none !important; 
+            -webkit-backdrop-filter: none !important;
+            box-shadow: none !important; 
             position: relative;
         }
         
@@ -153,8 +151,9 @@
             z-index: 2;
         }
 
-        .tile-hero h2 { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; margin: 0; color: var(--sky); font-weight: 700; }
-        .tile-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 10px 0; font-style: italic; line-height: 1.1; }
+        /* Changed color from --sky to --white to remove blue accent */
+        .tile-hero h2 { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; margin: 0; color: var(--white); font-weight: 700; opacity: 0.8; }
+        .tile-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 10px 0; font-style: italic; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .tile-hero h1 span { color: var(--gold); display: block; font-size: 1rem; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-style: normal; letter-spacing: 6px; margin-top: 8px; }
 
         /* Boarding Pass Styles */
@@ -187,7 +186,7 @@
         .tm-logo {
             width: 85px;
             height: auto;
-            filter: brightness(0) invert(1); /* Makes the logo white against blue bg */
+            filter: brightness(0) invert(1);
             display: block;
         }
 
@@ -254,13 +253,11 @@
             grid-column: span 2;
             text-align: center;
             padding: 35px 20px;
-            /* Updated to "contain" so the whole building fits in the box */
             background: #001b3a url('HOB Houston 348e13c7-1b2b-49fd-83bd-ac5671e96595.jpeg') center/contain no-repeat;
             position: relative;
             min-height: 220px; 
             border: 1px solid var(--gold);
         }
-        /* Overlay for HOB tile for readability - adjusted to focus on the text area */
         .tile-hob::after {
             content: '';
             position: absolute;
@@ -268,15 +265,12 @@
             background: linear-gradient(to top, rgba(0, 35, 73, 0.8) 0%, rgba(0, 35, 73, 0.2) 100%);
             z-index: 0;
         }
-        .tile-hob * {
-            position: relative;
-            z-index: 1;
-        }
+        .tile-hob * { position: relative; z-index: 1; }
         .tile-hob label { color: var(--gold); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; margin-top: auto; margin-bottom: 8px; display: block; font-weight: 700; }
         .tile-hob p { margin: 0; font-size: 1.15rem; font-weight: 700; line-height: 1.3; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
         .tile-hob .tap-directions { font-size: 0.55rem; margin-top: 10px; font-weight: 700; text-transform: uppercase; color: var(--sky); letter-spacing: 1px; }
 
-        /* RSVP Style with Duplicated Hat */
+        /* RSVP Style */
         .tile-rsvp { 
             grid-column: span 2; 
             padding: 30px 20px; 
@@ -299,20 +293,18 @@
         <img src="istockphoto-486325686-612x612.jpg" alt="Yacht Deck Sunset">
     </div>
 
-    <!-- Background overlay removed to get rid of blue tint -->
-
     <div class="cloud cloud-1"></div>
     <div class="cloud cloud-2"></div>
 
     <div class="app-container">
         <div class="bento-grid">
             
-            <!-- Hero Tile (Fully Transparent) -->
+            <!-- Hero Tile (Forced Transparent & No Border) -->
             <div class="bento-item tile-hero">
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="hero-hat" alt="Captain Hat">
                 <h2>Let's Get Sailing</h2>
                 <h1>Terry's Birthday <span>Celebration</span></h1>
-                <span style="font-size: 0.85rem; letter-spacing: 2px; color: var(--gold); font-weight: 700;">Houston · Tomorrow Night</span>
+                <span style="font-size: 0.85rem; letter-spacing: 2px; color: var(--gold); font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Houston · Tomorrow Night</span>
             </div>
 
             <!-- Boarding Pass -->
