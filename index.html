@@ -130,12 +130,12 @@
             z-index: 10;
         }
 
-        /* Hero Tile - Now with Hat and Sailboat Background */
+        /* Hero Tile - Revised to remove internal image and focus on page background */
         .tile-hero {
             grid-column: span 2;
             text-align: center;
             padding: 30px 25px 40px;
-            background: linear-gradient(135deg, rgba(197, 160, 89, 0.3), rgba(0, 35, 73, 0.7)), url('istockphoto-486325686-612x612.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(197, 160, 89, 0.3), rgba(0, 35, 73, 0.7));
             border: 2px solid var(--gold);
             position: relative;
         }
@@ -300,7 +300,7 @@
 </head>
 <body>
 
-    <!-- Fixed Deck Background -->
+    <!-- Fixed Deck Background - Image applied globally here -->
     <div class="fixed-bg">
         <img src="istockphoto-486325686-612x612.jpg" alt="Yacht Deck Sunset">
     </div>
@@ -312,7 +312,7 @@
     <div class="app-container">
         <div class="bento-grid">
             
-            <!-- Hero (Row 1) - First Bento Box -->
+            <!-- Hero (Row 1) - First Bento Box - Image removed from box background -->
             <div class="bento-item tile-hero">
                 <!-- Captain Hat Image -->
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="hero-hat" alt="Captain Hat">
