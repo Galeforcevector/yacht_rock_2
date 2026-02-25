@@ -236,14 +236,22 @@
         .band-label { position: absolute; bottom: 10px; left: 10px; background: rgba(0, 35, 73, 0.9); color: var(--white); padding: 4px 10px; border-radius: 12px; font-size: 0.55rem; font-weight: 700; z-index: 2; border: 1px solid var(--gold); }
 
         /* Navigation Port */
+        @keyframes seaSway {
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            50% { transform: translateY(-5px) rotate(1deg); }
+        }
+
         .tile-hob {
             grid-column: span 2;
             text-align: center;
             padding: 30px 20px;
-            background: #001b3a url('HOB Houston 348e13c7-1b2b-49fd-83bd-ac5671e96595.jpeg') center/cover no-repeat;
+            /* Resized background to fit better */
+            background: #001b3a url('HOB Houston 348e13c7-1b2b-49fd-83bd-ac5671e96595.jpeg') center/contain no-repeat;
             position: relative;
             min-height: 180px; 
             border: 1px solid var(--gold);
+            /* Added nautical swaying motion */
+            animation: seaSway 7s ease-in-out infinite;
         }
         .tile-hob::after {
             content: '';
