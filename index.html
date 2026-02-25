@@ -121,7 +121,7 @@
             color: inherit;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 24 rgba(0,0,0,0.25);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
         }
 
         .bento-item:active {
@@ -158,7 +158,7 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: clamp(1.8rem, 7vw, 2.3rem); 
+            font-size: clamp(2rem, 8vw, 2.5rem); 
             margin: 5px 0; 
             line-height: 1; 
             text-shadow: 0 2px 15px rgba(0,0,0,0.8); 
@@ -166,7 +166,7 @@
         .tile-hero h1 span { 
             color: var(--gold); 
             display: block; 
-            font-size: 0.85rem; 
+            font-size: 1rem; 
             text-transform: uppercase; 
             font-family: 'Montserrat', sans-serif; 
             font-style: normal; 
@@ -185,15 +185,15 @@
             backdrop-filter: blur(5px);
             -webkit-backdrop-filter: blur(5px);
         }
-        .pass-header { background: var(--navy); color: var(--white); padding: 6px; font-size: 0.45rem; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; }
+        .pass-header { background: var(--navy); color: var(--white); padding: 8px; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; text-align: center; }
         .pass-body { padding: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%; }
-        .pass-body label { display: block; font-size: 0.4rem; text-transform: uppercase; color: #ccc; margin-bottom: 2px; }
-        .pass-body p { font-size: 0.85rem; margin: 0; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
-        .pass-barcode { font-family: 'Libre Barcode 128', cursive; font-size: 1.6rem; margin: 6px 0; opacity: 0.9; color: var(--white); }
-        .pass-perforation { border-top: 1px dashed rgba(255,255,255,0.3); height: 1px; width: 100%; margin: 8px 0; }
+        .pass-body label { display: block; font-size: 0.55rem; text-transform: uppercase; color: #ccc; margin-bottom: 3px; }
+        .pass-body p { font-size: 1rem; margin: 0; font-weight: 700; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+        .pass-barcode { font-family: 'Libre Barcode 128', cursive; font-size: 1.9rem; margin: 8px 0; opacity: 0.9; color: var(--white); }
+        .pass-perforation { border-top: 1px dashed rgba(255,255,255,0.3); height: 1px; width: 100%; margin: 10px 0; }
         
         .tm-box {
-            margin: 8px auto 0;
+            margin: 10px auto 0;
             width: 100%;
         }
         .tm-logo { width: 100%; height: auto; display: block; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); }
@@ -214,13 +214,13 @@
             justify-content: center;
         }
         .concierge-img { 
-            width: 110px; /* Made the image logo bigger as requested */
-            height: 110px; /* Made the image logo bigger as requested */
+            width: 110px; 
+            height: 110px; 
             object-fit: cover; 
-            object-position: center; /* Adjusted to center her face in the circle */
-            border-radius: 50%; /* Makes image a perfect circle */
+            object-position: center; 
+            border-radius: 50%; 
             border: 2px solid var(--gold);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .concierge-content { 
             height: auto !important; 
@@ -233,22 +233,22 @@
             text-align: center; 
             text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
-        .concierge-content h3 { margin: 0; font-size: 0.7rem; font-family: 'Playfair Display', serif; font-style: italic; line-height: 1.2; }
-        .concierge-content p { margin: 1px 0; font-size: 0.4rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--gold); }
+        .concierge-content h3 { margin: 0; font-size: 0.85rem; font-family: 'Playfair Display', serif; font-style: italic; line-height: 1.2; }
+        .concierge-content p { margin: 2px 0; font-size: 0.55rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; color: var(--gold); }
         .amazon-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            margin-top: 4px;
+            margin-top: 6px;
             text-decoration: none;
             background: #232f3e;
             color: white;
-            padding: 3px 8px;
+            padding: 5px 10px;
             border-radius: 4px;
-            font-size: 0.5rem;
+            font-size: 0.65rem;
             font-weight: 700;
         }
-        .amazon-logo-img { height: 10px; margin-right: 4px; filter: brightness(0) invert(1); }
+        .amazon-logo-img { height: 12px; margin-right: 5px; filter: brightness(0) invert(1); }
 
         /* Timer */
         .tile-timer { 
@@ -257,12 +257,12 @@
             justify-content: space-around; 
             background: var(--white); 
             color: var(--navy); 
-            padding: 18px; 
+            padding: 20px; 
             border: 2px solid var(--navy); 
         }
         .timer-unit { display: flex; flex-direction: column; align-items: center; }
-        .timer-unit span:first-child { font-weight: 700; font-size: 1.5rem; }
-        .timer-unit span:last-child { font-size: 0.55rem; text-transform: uppercase; opacity: 0.8; font-weight: 700; }
+        .timer-unit span:first-child { font-weight: 700; font-size: 1.8rem; }
+        .timer-unit span:last-child { font-size: 0.7rem; text-transform: uppercase; opacity: 0.8; font-weight: 700; }
 
         /* Video */
         .tile-video { 
@@ -273,8 +273,8 @@
         }
         .video-container { position: relative; width: 100%; height: 100%; background: #000; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .play-overlay { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.8); padding: 6px 12px; border-radius: 20px; font-size: 0.55rem; color: var(--gold); font-weight: 700; z-index: 2; border: 1px solid var(--gold); }
-        .band-label { position: absolute; bottom: 10px; left: 10px; background: rgba(0, 35, 73, 0.9); color: var(--white); padding: 4px 10px; border-radius: 12px; font-size: 0.55rem; font-weight: 700; z-index: 2; border: 1px solid var(--gold); }
+        .play-overlay { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.8); padding: 8px 14px; border-radius: 20px; font-size: 0.65rem; color: var(--gold); font-weight: 700; z-index: 2; border: 1px solid var(--gold); }
+        .band-label { position: absolute; bottom: 12px; left: 12px; background: rgba(0, 35, 73, 0.9); color: var(--white); padding: 6px 12px; border-radius: 12px; font-size: 0.65rem; font-weight: 700; z-index: 2; border: 1px solid var(--gold); }
 
         /* Navigation Port */
         @keyframes seaSway {
@@ -285,13 +285,12 @@
         .tile-hob {
             grid-column: span 2;
             text-align: center;
-            padding: 20px 15px; /* Tighter padding for a better fit */
+            padding: 25px 20px; 
             /* Resized background to fit better */
             background: #001b3a url('HOB Houston 348e13c7-1b2b-49fd-83bd-ac5671e96595.jpeg') center/contain no-repeat;
             position: relative;
-            min-height: 140px; /* Reduced height to size the bento box appropriately */
+            min-height: 140px; 
             border: 1px solid var(--gold);
-            /* Added nautical swaying motion */
             animation: seaSway 7s ease-in-out infinite;
         }
         .tile-hob::after {
@@ -302,8 +301,8 @@
             z-index: 0;
         }
         .tile-hob * { position: relative; z-index: 1; }
-        .tile-hob label { color: var(--gold); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; display: block; font-weight: 700; }
-        .tile-hob p { margin: 0; font-size: 1.1rem; font-weight: 700; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,1); }
+        .tile-hob label { color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; display: block; font-weight: 700; }
+        .tile-hob p { margin: 0; font-size: 1.3rem; font-weight: 700; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,1); }
 
         /* RSVP Style */
         .tile-rsvp { 
@@ -314,23 +313,23 @@
             background: rgba(197, 160, 89, 0.25); 
             box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); 
         }
-        .rsvp-hat { width: 45px; height: auto; margin-bottom: 8px; opacity: 0.9; }
+        .rsvp-hat { width: 50px; height: auto; margin-bottom: 10px; opacity: 0.9; }
 
         .footer-quote { 
             text-align: center; 
-            font-size: 0.7rem; 
+            font-size: 0.85rem; 
             opacity: 0.95; 
             font-style: italic; 
-            margin-top: 30px; 
+            margin-top: 35px; 
             padding: 0 20px; 
-            line-height: 1.5; 
+            line-height: 1.6; 
             text-shadow: 0 1px 3px rgba(0,0,0,0.8); 
         }
 
         /* Adjustments for extra small phones */
         @media (max-width: 360px) {
             .tile-hero h1 { font-size: 1.8rem; }
-            .timer-unit span:first-child { font-size: 1.2rem; }
+            .timer-unit span:first-child { font-size: 1.4rem; }
             .bento-item { padding: 14px; }
         }
     </style>
@@ -351,9 +350,9 @@
             <!-- Hero Tile (First Box - Already Transparent) -->
             <div class="bento-item tile-hero">
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="hero-hat" alt="Captain Hat">
-                <h2 style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.6rem; margin: 0; color: var(--white); font-weight: 700; opacity: 0.9;">Prepare for Smooth Sailing</h2>
+                <h2 style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.75rem; margin: 0; color: var(--white); font-weight: 700; opacity: 0.9;">Prepare for Smooth Sailing</h2>
                 <h1>Terry's Birthday <span>Celebration</span></h1>
-                <span style="font-size: 0.75rem; letter-spacing: 2px; color: var(--gold); font-weight: 700;">Houston · Embarking Tomorrow</span>
+                <span style="font-size: 0.9rem; letter-spacing: 2px; color: var(--gold); font-weight: 700;">Houston · Embarking Tomorrow</span>
             </div>
 
             <!-- Julie McCoy Concierge with Amazon Link (Second Box - Now Transparent Circle style) -->
@@ -380,7 +379,7 @@
                     <div class="pass-barcode">VINTAGE2026</div>
                     <div class="tm-box">
                         <!-- Added ticket purchase text -->
-                        <p style="font-size: 0.5rem; margin-bottom: 6px; text-transform: uppercase; font-weight: 800; color: var(--gold); letter-spacing: 1px;">Purchase your tickets.<br>Click this link</p>
+                        <p style="font-size: 0.65rem; margin-bottom: 8px; text-transform: uppercase; font-weight: 800; color: var(--gold); letter-spacing: 1px;">Purchase your tickets.<br>Click this link</p>
                         <!-- Restored original Ticketmaster logo reference -->
                         <img src="blue-logo@3x.png" alt="Ticketmaster" class="tm-logo">
                     </div>
@@ -409,26 +408,26 @@
                 <div style="flex: 1;"></div> 
                 <label>Port of Call</label>
                 <p>House of Blues · Houston</p>
-                <span style="font-size: 0.5rem; color: var(--gold); text-transform: uppercase; margin-top: 4px; font-weight: 700;">Foundation Room Entry</span>
+                <span style="font-size: 0.65rem; color: var(--gold); text-transform: uppercase; margin-top: 6px; font-weight: 700;">Foundation Room Entry</span>
             </a>
 
             <!-- RSVP -->
             <a href="sms:+12817333775?body=I'm%20joining%20the%20voyage!%20⚓" class="bento-item tile-rsvp">
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="rsvp-hat" alt="Small Hat">
-                <h2 style="color: var(--gold); margin: 0 0 8px 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">Secure Your Passage</h2>
-                <div style="background: var(--gold); color: var(--navy); padding: 8px 15px; border-radius: 50px; font-weight: 700; letter-spacing: 1px; margin: 5px 0; display: inline-block;">
+                <h2 style="color: var(--gold); margin: 0 0 10px 0; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px;">Secure Your Passage</h2>
+                <div style="background: var(--gold); color: var(--navy); padding: 10px 20px; border-radius: 50px; font-weight: 700; letter-spacing: 1px; margin: 8px 0; display: inline-block; font-size: 0.85rem;">
                     TAP TO TEXT RSVP ⚓
                 </div>
-                <p style="font-weight: 700; letter-spacing: 1px; margin: 5px 0 0; font-size: 0.8rem; opacity: 0.9;">1-281-733-3775</p>
-                <p style="font-size: 0.5rem; opacity: 0.8; margin-top: 6px; font-weight: 400; color: #fff;">Confirm by sunset for the Captain's Table.</p>
+                <p style="font-weight: 700; letter-spacing: 1px; margin: 5px 0 0; font-size: 1rem; opacity: 0.9;">1-281-733-3775</p>
+                <p style="font-size: 0.65rem; opacity: 0.8; margin-top: 8px; font-weight: 400; color: #fff;">Confirm by sunset for the Captain's Table.</p>
             </a>
 
         </div>
 
         <p class="footer-quote">
             "Brandy, you're a fine girl, what a good birthday you would be."<br>
-            <span style="font-weight: 700; color: var(--gold); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px;">Dress: Yacht Chic / Captain's Hats Required</span><br>
-            <span style="font-size: 0.6rem; opacity: 0.7; display: block; margin-top: 8px;">Vessel departs promptly at 19:15.</span>
+            <span style="font-weight: 700; color: var(--gold); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Dress: Yacht Chic / Captain's Hats Required</span><br>
+            <span style="font-size: 0.7rem; opacity: 0.7; display: block; margin-top: 10px;">Vessel departs promptly at 19:15.</span>
         </p>
     </div>
 
@@ -440,7 +439,7 @@
             const difference = eventDate - now;
 
             if (difference <= 0) {
-                document.getElementById('timer').innerHTML = "<div style='font-weight:700; width: 100%; text-align: center; color: var(--navy); font-size: 1rem;'>ANCHORS AWEIGH! ⚓</div>";
+                document.getElementById('timer').innerHTML = "<div style='font-weight:700; width: 100%; text-align: center; color: var(--navy); font-size: 1.2rem;'>ANCHORS AWEIGH! ⚓</div>";
                 return;
             }
 
