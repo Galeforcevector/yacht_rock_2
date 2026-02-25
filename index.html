@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Terry's Birthday Voyage</title>
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Libre+Barcode+128&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Libre+Barcode+128&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #002349;
@@ -154,11 +154,13 @@
         }
 
         .tile-hero h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(2rem, 8vw, 2.5rem); 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: clamp(1.8rem, 7vw, 2.3rem); 
             margin: 5px 0; 
-            font-style: italic; 
-            line-height: 1.1; 
+            line-height: 1; 
             text-shadow: 0 2px 15px rgba(0,0,0,0.8); 
         }
         .tile-hero h1 span { 
@@ -170,6 +172,7 @@
             font-style: normal; 
             letter-spacing: 5px; 
             margin-top: 6px; 
+            font-weight: 400;
         }
 
         /* Boarding Pass */
@@ -257,10 +260,10 @@
         .tile-rsvp { 
             grid-column: span 2; 
             padding: 25px 20px; 
-            border: 3px solid var(--gold); /* Highlighted with thicker solid border */
+            border: 3px solid var(--gold); 
             text-align: center; 
-            background: rgba(197, 160, 89, 0.25); /* Slightly darker background for emphasis */
-            box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); /* Glowing highlight */
+            background: rgba(197, 160, 89, 0.25); 
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.5); 
         }
         .rsvp-hat { width: 45px; height: auto; margin-bottom: 8px; opacity: 0.9; }
 
@@ -359,7 +362,10 @@
             <a href="sms:+12817333775?body=I'm%20joining%20the%20voyage!%20⚓" class="bento-item tile-rsvp">
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="rsvp-hat" alt="Small Hat">
                 <h2 style="color: var(--gold); margin: 0 0 8px 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">Secure Your Passage</h2>
-                <p style="font-weight: 700; letter-spacing: 2px; margin: 0; font-size: 0.9rem;">TEXT: 1-281-733-3775 ⚓</p>
+                <div style="background: var(--gold); color: var(--navy); padding: 8px 15px; border-radius: 50px; font-weight: 700; letter-spacing: 1px; margin: 5px 0; display: inline-block;">
+                    TAP TO TEXT RSVP ⚓
+                </div>
+                <p style="font-weight: 700; letter-spacing: 1px; margin: 5px 0 0; font-size: 0.8rem; opacity: 0.9;">1-281-733-3775</p>
                 <p style="font-size: 0.5rem; opacity: 0.8; margin-top: 6px; font-weight: 400; color: #fff;">Confirm by sunset for the Captain's Table.</p>
             </a>
 
