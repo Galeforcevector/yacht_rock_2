@@ -297,7 +297,14 @@
             
             <!-- Hero Tile -->
             <div class="bento-item tile-hero">
-                <img src="61FM3OKfViL._AC_SX569_.jpg" class="hero-hat" alt="Captain Hat">
+                <!-- Inline SVG removes background white box while keeping original look -->
+                <svg class="hero-hat" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 40 Q50 30 90 40 L90 50 Q50 60 10 50 Z" fill="white" />
+                    <path d="M15 40 Q50 10 85 40" fill="white" stroke="#002349" stroke-width="1.5" />
+                    <path d="M5 45 Q50 55 95 45 L95 48 Q50 58 5 48 Z" fill="#222" />
+                    <circle cx="50" cy="35" r="7" fill="#C5A059" />
+                    <path d="M48 35 L50 31 L52 35 L50 39 Z" fill="#002349" />
+                </svg>
                 <h2 style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.6rem; margin: 0; color: var(--white); font-weight: 700; opacity: 0.9;">Prepare for Smooth Sailing</h2>
                 <h1>Terry's Birthday <span>Celebration</span></h1>
                 <span style="font-size: 0.75rem; letter-spacing: 2px; color: var(--gold); font-weight: 700;">Houston · Embarking Tomorrow</span>
@@ -349,14 +356,19 @@
             <!-- Navigation Port -->
             <a href="https://www.google.com/maps/dir/?api=1&destination=House+of+Blues+Houston+1204+Caroline+St+Houston+TX+77002" target="_blank" class="bento-item tile-hob">
                 <div style="flex: 1;"></div> 
-                <label>Nav Port</label>
+                <label>Port of Call</label>
                 <p>House of Blues · Houston</p>
                 <span style="font-size: 0.5rem; color: var(--gold); text-transform: uppercase; margin-top: 4px; font-weight: 700;">Foundation Room Entry</span>
             </a>
 
             <!-- RSVP -->
             <a href="sms:+12817333775?body=I'm%20joining%20the%20voyage!%20⚓" class="bento-item tile-rsvp">
-                <img src="61FM3OKfViL._AC_SX569_.jpg" class="rsvp-hat" alt="Small Hat">
+                <svg class="rsvp-hat" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 40 Q50 30 90 40 L90 50 Q50 60 10 50 Z" fill="white" />
+                    <path d="M15 40 Q50 10 85 40" fill="white" stroke="#002349" stroke-width="1.5" />
+                    <path d="M5 45 Q50 55 95 45 L95 48 Q50 58 5 48 Z" fill="#222" />
+                    <circle cx="50" cy="35" r="7" fill="#C5A059" />
+                </svg>
                 <h2 style="color: var(--gold); margin: 0 0 8px 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">Secure Your Passage</h2>
                 <p style="font-weight: 700; letter-spacing: 2px; margin: 0; font-size: 0.9rem;">TEXT: 1-281-733-3775 ⚓</p>
                 <p style="font-size: 0.5rem; opacity: 0.8; margin-top: 6px; font-weight: 400; color: #fff;">Confirm by sunset for the Captain's Table.</p>
