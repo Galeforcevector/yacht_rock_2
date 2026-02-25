@@ -1,55 +1,17 @@
-/* Base Styles */
-body {
-    background-color: #191970; /* Midnight Blue - Nautical */
-    color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
+/* Update this rule to set the labels to white */
+.tile-timer {
+    grid-column: span 2;
+    flex-direction: row;
+    justify-content: space-around;
+    background: var(--navy); /* Changed from white to navy for contrast */
+    color: #FFFFFF;          /* White text for labels */
+    padding: 22px;
+    border: 3px solid #FFCC00; /* Gold border */
 }
 
-h1, h2, h3 {
-    font-weight: 700; /* Montserrat Bold */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Nautical Branding Colors */
-.label-friction {
-    color: #000080; /* Navy Blue */
+/* Update this rule to set the numbers to gold */
+.timer-unit span:first-child {
     font-weight: 700;
-}
-
-.btn-rsvp, .btn-learn-more {
-    background-color: #FFCC00; /* Vibrant Yellow - Safety/Sun Accent */
-    color: #191970;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    display: inline-block;
-    margin-top: 20px;
-    border: 2px solid #FFFFFF; /* White accent for clean yacht look */
-    transition: transform 0.2s;
-}
-
-.btn-rsvp:hover {
-    transform: scale(1.05);
-}
-
-/* Layout Definitions */
-.card {
-    border: 2px solid #FFFFFF; /* Clean White Borders */
-    background: rgba(255, 255, 255, 0.1); /* Subtle glass effect */
-    padding: 25px;
-    border-radius: 15px;
-    margin: 20px auto;
-    max-width: 600px;
-}
-
-/* Ensure images fit well */
-img {
-    max-width: 100%;
-    border-radius: 10px;
-    border: 2px solid #FFFFFF;
+    font-size: 1.8rem;
+    color: #FFCC00;          /* Gold text for numbers */
 }
