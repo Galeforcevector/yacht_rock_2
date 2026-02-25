@@ -28,7 +28,8 @@
             padding: 0;
             min-height: 100%;
             width: 100%;
-            background-color: var(--navy); 
+            /* Removed solid color to prevent covering the fixed background div */
+            background-color: transparent; 
         }
 
         body {
@@ -45,25 +46,29 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100dvh; 
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
             z-index: -10;
-            /* Replaced with a reliable high-res nautical background */
-            background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000&auto=format&fit=crop');
-            background-position: center;
+            /* High-quality nautical/yacht background from Unsplash */
+            background-image: url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?auto=format&fit=crop&q=80&w=2000');
+            background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
-            filter: brightness(0.6) contrast(1.1);
+            background-attachment: scroll; /* Scroll is better for mobile fixed divs */
+            filter: brightness(0.5) contrast(1.1);
+            background-color: var(--navy); /* Fallback color */
         }
 
         .page-overlay {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100dvh;
+            right: 0;
+            bottom: 0;
             z-index: -9;
-            background: linear-gradient(180deg, rgba(0, 27, 58, 0.3) 0%, rgba(0, 27, 58, 0.6) 100%);
+            background: linear-gradient(180deg, rgba(0, 27, 58, 0.2) 0%, rgba(0, 27, 58, 0.5) 100%);
             pointer-events: none;
         }
 
@@ -234,7 +239,6 @@
             grid-column: span 2;
             text-align: center;
             padding: 30px 20px;
-            /* Replaced with a generic but high-quality concert/lounge background */
             background: #001b3a url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat;
             position: relative;
             min-height: 180px; 
@@ -310,7 +314,6 @@
 
             <!-- Julie McCoy Concierge -->
             <div class="bento-item tile-concierge">
-                <!-- Reverted back to the original local reference -->
                 <img src="Julie_McCoy.webp" alt="Julie McCoy" class="concierge-img">
                 <div class="concierge-content">
                     <h3>"Welcome Aboard!"</h3>
@@ -329,7 +332,6 @@
                     <p>7:00 PM</p>
                     <div class="pass-barcode">VINTAGE2026</div>
                     <div class="tm-box">
-                        <!-- Stable Ticketmaster Logo -->
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Ticketmaster_logo.svg/512px-Ticketmaster_logo.svg.png" alt="Ticketmaster" class="tm-logo">
                     </div>
                 </div>
