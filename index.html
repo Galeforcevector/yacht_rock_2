@@ -26,9 +26,10 @@
         html, body {
             margin: 0;
             padding: 0;
-            height: 100%;
+            min-height: 100%;
             width: 100%;
-            background-color: #000; /* Dark base so no blue shines through */
+            /* Set to transparent to ensure the fixed background shows through */
+            background-color: transparent; 
         }
 
         body {
@@ -47,14 +48,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -2;
-        }
-
-        .fixed-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.6) contrast(1.1); /* Slightly darkened for better text legibility */
+            /* High-res Yacht Deck background */
+            background: url('https://images.unsplash.com/photo-1567628277981-0629676f627e?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            z-index: -10; /* Sent to the absolute back */
+            filter: brightness(0.65) contrast(1.1);
         }
 
         /* --- ANIMATED CLOUDS --- */
@@ -119,13 +116,13 @@
             z-index: 10;
         }
 
-        /* Hero Tile - Forced Transparency and Border Removal */
+        /* Hero Tile - Fully Transparent Overlay */
         .tile-hero {
             grid-column: span 2;
             text-align: center;
             padding: 20px 25px 30px;
-            background: transparent !important; /* Force transparent */
-            border: none !important; /* Remove border to clear up the space */
+            background: transparent !important; 
+            border: none !important; 
             backdrop-filter: none !important; 
             -webkit-backdrop-filter: none !important;
             box-shadow: none !important; 
@@ -151,9 +148,8 @@
             z-index: 2;
         }
 
-        /* Changed color from --sky to --white to remove blue accent */
-        .tile-hero h2 { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; margin: 0; color: var(--white); font-weight: 700; opacity: 0.8; }
-        .tile-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 10px 0; font-style: italic; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .tile-hero h2 { text-transform: uppercase; letter-spacing: 5px; font-size: 0.7rem; margin: 0; color: var(--white); font-weight: 700; opacity: 0.9; }
+        .tile-hero h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 10px 0; font-style: italic; line-height: 1.1; text-shadow: 0 2px 15px rgba(0,0,0,0.7); }
         .tile-hero h1 span { color: var(--gold); display: block; font-size: 1rem; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-style: normal; letter-spacing: 6px; margin-top: 8px; }
 
         /* Boarding Pass Styles */
@@ -173,21 +169,22 @@
         
         /* Ticketmaster Logo Box Styling */
         .tm-box {
-            background-color: var(--tm-blue);
-            padding: 6px 12px;
-            border-radius: 4px;
+            background-color: #fff; /* White background for official logo look */
+            padding: 8px 12px;
+            border-radius: 8px;
             margin: 10px auto 0;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
         }
 
         .tm-logo {
-            width: 85px;
+            width: 100px; /* Sized for better presence */
             height: auto;
-            filter: brightness(0) invert(1);
             display: block;
+            /* Filter removed to show the original SVG logo colors */
         }
 
         /* Julie McCoy Concierge Style */
@@ -289,9 +286,7 @@
 <body>
 
     <!-- Fixed Deck Background -->
-    <div class="fixed-bg">
-        <img src="istockphoto-486325686-612x612.jpg" alt="Yacht Deck Sunset">
-    </div>
+    <div class="fixed-bg"></div>
 
     <div class="cloud cloud-1"></div>
     <div class="cloud cloud-2"></div>
@@ -299,12 +294,12 @@
     <div class="app-container">
         <div class="bento-grid">
             
-            <!-- Hero Tile (Forced Transparent & No Border) -->
+            <!-- Hero Tile (Fully Transparent Overlay) -->
             <div class="bento-item tile-hero">
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="hero-hat" alt="Captain Hat">
                 <h2>Let's Get Sailing</h2>
                 <h1>Terry's Birthday <span>Celebration</span></h1>
-                <span style="font-size: 0.85rem; letter-spacing: 2px; color: var(--gold); font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Houston · Tomorrow Night</span>
+                <span style="font-size: 0.85rem; letter-spacing: 2px; color: var(--gold); font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Houston · Tomorrow Night</span>
             </div>
 
             <!-- Boarding Pass -->
@@ -317,8 +312,9 @@
                     <label>Time</label>
                     <p>7:00 PM</p>
                     <div class="pass-barcode">VINTAGE2026</div>
+                    <!-- Fixed Ticketmaster Logo with standard colors -->
                     <div class="tm-box">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Ticketmaster_logo.svg" alt="Ticketmaster" class="tm-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Ticketmaster_logo.svg/512px-Ticketmaster_logo.svg.png" alt="Ticketmaster" class="tm-logo">
                     </div>
                 </div>
             </a>
