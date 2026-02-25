@@ -28,7 +28,7 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            background-color: #001b3a;
+            background-color: #000; /* Set to black or transparent so blue doesn't show through */
         }
 
         body {
@@ -54,19 +54,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.65) contrast(1.1);
+            filter: brightness(0.7) contrast(1.1); /* Slightly adjusted brightness */
         }
 
-        .bg-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,27,58,0.1) 0%, rgba(0,27,58,0.4) 100%);
-            z-index: -1;
-            pointer-events: none;
-        }
+        /* Removed .bg-overlay entirely to get rid of the blue tint/wash */
 
         /* --- ANIMATED CLOUDS --- */
         .cloud {
@@ -130,16 +121,16 @@
             z-index: 10;
         }
 
-        /* Hero Tile - Background set to transparent to remove the blue/gradient overlay */
+        /* Hero Tile - Fully transparent with no backdrop effects */
         .tile-hero {
             grid-column: span 2;
             text-align: center;
             padding: 30px 25px 40px;
-            background: transparent; /* Removed blue background */
+            background: transparent; 
             border: 2px solid var(--gold);
-            backdrop-filter: none; /* Optional: remove blur if you want it completely clear */
+            backdrop-filter: none; 
             -webkit-backdrop-filter: none;
-            box-shadow: none; /* Optional: remove shadow to make it feel integrated into the background */
+            box-shadow: none; 
             position: relative;
         }
         
@@ -266,7 +257,7 @@
             /* Updated to "contain" so the whole building fits in the box */
             background: #001b3a url('HOB Houston 348e13c7-1b2b-49fd-83bd-ac5671e96595.jpeg') center/contain no-repeat;
             position: relative;
-            min-height: 220px; /* Increased height slightly to accommodate the full image aspect ratio */
+            min-height: 220px; 
             border: 1px solid var(--gold);
         }
         /* Overlay for HOB tile for readability - adjusted to focus on the text area */
@@ -303,11 +294,12 @@
 </head>
 <body>
 
-    <!-- Fixed Deck Background - Image applied globally here -->
+    <!-- Fixed Deck Background -->
     <div class="fixed-bg">
         <img src="istockphoto-486325686-612x612.jpg" alt="Yacht Deck Sunset">
     </div>
-    <div class="bg-overlay"></div>
+
+    <!-- Background overlay removed to get rid of blue tint -->
 
     <div class="cloud cloud-1"></div>
     <div class="cloud cloud-2"></div>
@@ -315,16 +307,15 @@
     <div class="app-container">
         <div class="bento-grid">
             
-            <!-- Hero (Row 1) - First Bento Box - Background set to transparent -->
+            <!-- Hero Tile (Fully Transparent) -->
             <div class="bento-item tile-hero">
-                <!-- Captain Hat Image -->
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="hero-hat" alt="Captain Hat">
                 <h2>Let's Get Sailing</h2>
                 <h1>Terry's Birthday <span>Celebration</span></h1>
                 <span style="font-size: 0.85rem; letter-spacing: 2px; color: var(--gold); font-weight: 700;">Houston · Tomorrow Night</span>
             </div>
 
-            <!-- Boarding Pass (Row 2, Interval 1) - Linked to Ticketmaster -->
+            <!-- Boarding Pass -->
             <a href="https://www.ticketmaster.com" target="_blank" class="bento-item tile-boarding">
                 <div class="pass-header">Boarding Pass</div>
                 <div class="pass-body">
@@ -334,14 +325,13 @@
                     <label>Time</label>
                     <p>7:00 PM</p>
                     <div class="pass-barcode">VINTAGE2026</div>
-                    <!-- Ticketmaster Logo Enclosed in a Box -->
                     <div class="tm-box">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Ticketmaster_logo.svg" alt="Ticketmaster" class="tm-logo">
                     </div>
                 </div>
             </a>
 
-            <!-- Julie McCoy Concierge (Row 2, Interval 2) -->
+            <!-- Julie McCoy Concierge -->
             <div class="bento-item tile-concierge">
                 <img src="Julie_McCoy.webp" alt="Julie McCoy" class="concierge-img">
                 <div class="concierge-content">
@@ -350,7 +340,7 @@
                 </div>
             </div>
 
-            <!-- Timer (Row 3) -->
+            <!-- Timer -->
             <div class="bento-item tile-timer" id="timer">
                 <div class="timer-unit"><span id="days">00</span><span>Days</span></div>
                 <div class="timer-unit"><span id="hours">00</span><span>Hrs</span></div>
@@ -358,7 +348,7 @@
                 <div class="timer-unit"><span id="seconds">00</span><span>Sec</span></div>
             </div>
 
-            <!-- Video (Row 4) with Band Preview - Autoplay enabled (must be muted) -->
+            <!-- Video -->
             <div class="bento-item tile-video">
                 <div class="play-overlay">⚓ SHOW PREVIEW</div>
                 <div class="band-label">Yacht Rock Revue LIVE</div>
@@ -367,15 +357,15 @@
                 </div>
             </div>
 
-            <!-- Navigation Port (Row 5) - House of Blues Fitting Full Box -->
+            <!-- Navigation Port -->
             <a href="https://www.google.com/maps/dir/?api=1&destination=House+of+Blues+Houston+1204+Caroline+St+Houston+TX+77002" target="_blank" class="bento-item tile-hob">
-                <div style="flex: 1;"></div> <!-- Spacer to push text to bottom overlay -->
+                <div style="flex: 1;"></div> 
                 <label>Nav Port</label>
                 <p>House of Blues · Houston, TX</p>
                 <div class="tap-directions">Tap for Directions 📍</div>
             </a>
 
-            <!-- RSVP (Row 6) - Duplicated Hat -->
+            <!-- RSVP -->
             <a href="sms:+15550000000?body=I'm%20joining%20the%20voyage!%20⚓" class="bento-item tile-rsvp">
                 <img src="61FM3OKfViL._AC_SX569_.jpg" class="rsvp-hat" alt="Small Hat">
                 <h2 style="color: var(--gold); margin: 0 0 10px 0; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 3px;">Secure Your Passage</h2>
@@ -391,7 +381,6 @@
     </div>
 
     <script>
-        // Feb 26, 2026 Target
         const eventDate = new Date("February 26, 2026 19:00:00").getTime();
 
         function updateCountdown() {
